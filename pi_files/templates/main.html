@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+    <head>
+        <title>{{ title }}</title>
+    </head>
+
+    <body>
+        <h1>Aloha!</h1>
+
+        <h2>Time and date: {{ time }}</h2>
+
+        <h2>Button status for board with address 0x2075:</h2>
+        <table>
+            {% for n in list %}
+                <tr>
+                    <th>{{n[0]}}</th>
+                    <td>{{n[1]}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+    </body>
+
+    {% block temperatures_day %} {{chart_t_24|safe}} {% endblock %}
+
+    {% block humidity_day %} {{chart_h_24|safe}} {% endblock %}
+
+</html>
